@@ -8,6 +8,7 @@ const headerMainStyle = {
     transitionDuration: ".3s",
     transitionTimingFunction: "ease-in-out",
     backgroundColor: "#18181b",
+    zIndex: 999
 }
 
 const hStackStyle = {
