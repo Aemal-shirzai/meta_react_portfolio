@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import LandingSection from './components/LandingSection';
+import ProjectsSection from './components/ProjectsSection';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
 
       <Header />
       <LandingSection />
+      <ProjectsSection />
 
     </main>
   );
