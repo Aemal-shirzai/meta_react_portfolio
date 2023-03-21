@@ -21,6 +21,11 @@ const ContactMeSection = () => {
     const { isLoading, response, submit } = useSubmit();
     const { onOpen } = useAlertContext();
 
+    useEffect(() => {
+        if (response) onOpen(response.type, response.message)
+    }, [response])
+
+
     const formik = useFormik({
         initialValues: {
             firstName: "",
@@ -28,7 +33,9 @@ const ContactMeSection = () => {
             type: "",
             comment: ""
         },
-        onSubmit: (values) => { },
+        onSubmit: async (values) => { 
+            await submit('/testurl', values)
+        },
         validationSchema: Yup.object({
             firstName: Yup.string().required('name is required!'),
             email: Yup.string().email('Invalid email').required('email is required!'),
@@ -49,7 +56,7 @@ const ContactMeSection = () => {
                     Contact me
                 </Heading>
                 <Box p={6} rounded="md" w="100%">
-                    <form>
+                    <form onSubmit={formik.handleSubmit}>
                         <VStack spacing={4}>
                             <FormControl isInvalid={formik.touched.firstName && formik.errors.firstName}>
                                 <FormLabel htmlFor="firstName">Name</FormLabel>

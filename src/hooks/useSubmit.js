@@ -11,8 +11,9 @@ const useSubmit = () => {
   const [response, setResponse] = useState(null);
 
   const submit = async (url, data) => {
-    const random = Math.random();
-    setLoading(true);
+      const random = Math.random();
+      setLoading(true);
+      console.log(">>>>>>>>> useSubmit hook", isLoading);
     try {
       await wait(2000);
       if (random < 0.5) {
@@ -29,6 +30,7 @@ const useSubmit = () => {
       })
     } finally {
       setLoading(false);
+      console.log(">>>>>>>>>>>>>>>>> finished");
     }
   };
 
