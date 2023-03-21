@@ -22,7 +22,10 @@ const ContactMeSection = () => {
     const { onOpen } = useAlertContext();
 
     useEffect(() => {
-        if (response) onOpen(response.type, response.message)
+        if (response) { 
+            onOpen(response.type, response.message)
+            if (response.type === 'success') formik.resetForm()
+        }
     }, [response])
 
 
@@ -33,7 +36,7 @@ const ContactMeSection = () => {
             type: "",
             comment: ""
         },
-        onSubmit: async (values) => { 
+        onSubmit: async (values, actions) => { 
             await submit('/testurl', values)
         },
         validationSchema: Yup.object({
