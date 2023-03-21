@@ -4,6 +4,7 @@ import Header from './components/Header';
 import LandingSection from './components/LandingSection';
 import ProjectsSection from './components/ProjectsSection';
 import Alert from "./components/Alert";
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <LandingSection />
         <ProjectsSection />
         <ContactMeSection />
+        <Footer />
         <Alert />
       </main>
   );
