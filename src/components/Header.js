@@ -3,7 +3,6 @@ import { faGithub, faLinkedin, faMedium, faStackOverflow } from "@fortawesome/fr
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import { headerMainStyle, hStackStyle } from "../helpers/HeaderStyle";
 const socials = [
   {
     icon: faEnvelope,
